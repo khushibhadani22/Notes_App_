@@ -91,7 +91,7 @@ class _AddNotePageState extends State<AddNotePage> {
           children: [
             IconButton(
                 onPressed: () async {
-                  PermissionStatus status = await Permission.camera.request();
+                  await Permission.camera.request();
                 },
                 icon: const Icon(
                   Icons.camera_alt_outlined,
@@ -99,8 +99,7 @@ class _AddNotePageState extends State<AddNotePage> {
                 )),
             IconButton(
                 onPressed: () async {
-                  PermissionStatus status1 = await Permission.storage.request();
-                  print("$status1");
+                  await Permission.storage.request();
                 },
                 icon: const Icon(
                   Icons.photo_album_outlined,
@@ -488,6 +487,28 @@ class _AddNotePageState extends State<AddNotePage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "${Global.currentDay} ${Global.months[Global.currentMonth - 1]},${Global.currentYear}",
+                    style: const TextStyle(
+                        color: Colors.black, fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "${Global.currentHour}:${Global.currentMint}",
+                    style: const TextStyle(
+                        color: Colors.black, fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
               TextFormField(
                 controller: titleController,
                 onSaved: (val) {

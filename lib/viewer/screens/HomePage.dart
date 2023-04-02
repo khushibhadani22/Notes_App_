@@ -21,6 +21,7 @@ class _HomePageState extends State<HomePage> {
   final GlobalKey<FormState> editNoteKey = GlobalKey<FormState>();
   final TextEditingController titleController = TextEditingController();
   final TextEditingController subTitleController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -768,10 +769,11 @@ class _HomePageState extends State<HomePage> {
                           },
                           child: Ink(
                             child: Container(
-                              padding: const EdgeInsets.all(15),
+                              padding: const EdgeInsets.all(8),
                               margin: const EdgeInsets.all(15),
                               decoration: BoxDecoration(
-                                color: myColor1,
+                                color: myColor,
+                                //    color: Global.cardsColor[i],
                                 borderRadius: BorderRadius.circular(10),
                                 border: Border.all(
                                   color: Colors.purple.shade900,
@@ -780,8 +782,16 @@ class _HomePageState extends State<HomePage> {
                               ),
                               alignment: Alignment.topLeft,
                               child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
+                                  Text(
+                                    "${Global.currentDay} ${Global.months[Global.currentMonth - 1]},${Global.currentYear}",
+                                    style: const TextStyle(
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 18),
+                                  ),
+
                                   Text(
                                     data[i]['title'],
                                     style: const TextStyle(
@@ -789,12 +799,25 @@ class _HomePageState extends State<HomePage> {
                                         fontWeight: FontWeight.w600,
                                         fontSize: 15),
                                   ),
+                                  // Text(data[i]['dateTime']),
                                   Text(
                                     data[i]['subtitle'],
                                     style: const TextStyle(
                                         color: Colors.black,
                                         fontSize: 13,
                                         fontWeight: FontWeight.w400),
+                                  ),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    children: [
+                                      Text(
+                                        "${Global.currentHour}:${Global.currentMint}",
+                                        style: const TextStyle(
+                                            fontWeight: FontWeight.w700,
+                                            fontSize: 18),
+                                      ),
+                                    ],
                                   ),
                                 ],
                               ),

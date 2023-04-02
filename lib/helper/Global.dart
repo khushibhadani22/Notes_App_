@@ -89,6 +89,47 @@ class Global {
   static String selMonth = '';
   static String selTime = '';
   static int selHour = 0;
+  static int selMint = 0;
   static DateTime currentDate = DateTime.now();
   static TimeOfDay currentTime = TimeOfDay.now();
+
+  static List<String> months = [
+    'Jan',
+    'Feb',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'Agu',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec'
+  ];
+
+  static int currentDay = DateTime.now().day;
+  static int currentMonth = DateTime.now().month;
+  static int currentYear = DateTime.now().year;
+  static int currentHour = DateTime.now().hour;
+  static int currentMint = DateTime.now().minute;
+
+  static List<Color> cardsColor = [
+    Colors.purple.shade100,
+    Colors.pink.shade100,
+    Colors.yellow.shade100,
+    Colors.green.shade100,
+    Colors.blue.shade100,
+    Colors.teal.shade100,
+    Colors.lime.shade100,
+    Colors.orange.shade100,
+    Colors.blueGrey.shade100,
+    Colors.red.shade100,
+    Colors.deepPurple.shade100,
+    Colors.indigo.shade100,
+    Colors.amber.shade100,
+    Colors.brown.shade100,
+    Colors.cyan.shade100,
+    Colors.deepOrange.shade100,
+  ];
 }
