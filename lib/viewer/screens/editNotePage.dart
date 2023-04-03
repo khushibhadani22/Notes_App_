@@ -67,7 +67,7 @@ class _EditNotePageState extends State<EditNotePage> {
       ),
       bottomNavigationBar: Container(
         height: 60,
-        color: myColor2,
+        color: myColor1,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -105,7 +105,7 @@ class _EditNotePageState extends State<EditNotePage> {
                                     onTap: () {
                                       setState(() {
                                         myColor = Colors.yellow.shade100;
-                                        myColor2 = Colors.yellow.shade50;
+                                        myColor1 = Colors.yellow.shade50;
                                       });
                                       Navigator.of(context).pop();
                                     },
@@ -118,7 +118,7 @@ class _EditNotePageState extends State<EditNotePage> {
                                     onTap: () {
                                       setState(() {
                                         myColor = Colors.purple.shade100;
-                                        myColor2 = Colors.purple.shade50;
+                                        myColor1 = Colors.purple.shade50;
                                       });
                                       Navigator.of(context).pop();
                                     },
@@ -131,7 +131,7 @@ class _EditNotePageState extends State<EditNotePage> {
                                     onTap: () {
                                       setState(() {
                                         myColor = Colors.blueGrey.shade100;
-                                        myColor2 = Colors.blueGrey.shade50;
+                                        myColor1 = Colors.blueGrey.shade50;
                                       });
                                       Navigator.of(context).pop();
                                     },
@@ -144,7 +144,7 @@ class _EditNotePageState extends State<EditNotePage> {
                                     onTap: () {
                                       setState(() {
                                         myColor = Colors.pink.shade100;
-                                        myColor2 = Colors.pink.shade50;
+                                        myColor1 = Colors.pink.shade50;
                                       });
                                       Navigator.of(context).pop();
                                     },
@@ -166,7 +166,7 @@ class _EditNotePageState extends State<EditNotePage> {
                                     onTap: () {
                                       setState(() {
                                         myColor = Colors.green.shade100;
-                                        myColor2 = Colors.green.shade50;
+                                        myColor1 = Colors.green.shade50;
                                       });
                                       Navigator.of(context).pop();
                                     },
@@ -179,7 +179,7 @@ class _EditNotePageState extends State<EditNotePage> {
                                     onTap: () {
                                       setState(() {
                                         myColor = Colors.blue.shade100;
-                                        myColor2 = Colors.blue.shade50;
+                                        myColor1 = Colors.blue.shade50;
                                       });
                                       Navigator.of(context).pop();
                                     },
@@ -192,7 +192,7 @@ class _EditNotePageState extends State<EditNotePage> {
                                     onTap: () {
                                       setState(() {
                                         myColor = Colors.red.shade100;
-                                        myColor2 = Colors.red.shade50;
+                                        myColor1 = Colors.red.shade50;
                                       });
                                       Navigator.of(context).pop();
                                     },
@@ -205,7 +205,7 @@ class _EditNotePageState extends State<EditNotePage> {
                                     onTap: () {
                                       setState(() {
                                         myColor = Colors.cyan.shade100;
-                                        myColor2 = Colors.cyan.shade50;
+                                        myColor1 = Colors.cyan.shade50;
                                       });
                                       Navigator.of(context).pop();
                                     },
@@ -227,7 +227,7 @@ class _EditNotePageState extends State<EditNotePage> {
                                     onTap: () {
                                       setState(() {
                                         myColor = Colors.teal.shade100;
-                                        myColor2 = Colors.teal.shade50;
+                                        myColor1 = Colors.teal.shade50;
                                       });
                                       Navigator.of(context).pop();
                                     },
@@ -240,7 +240,7 @@ class _EditNotePageState extends State<EditNotePage> {
                                     onTap: () {
                                       setState(() {
                                         myColor = Colors.orange.shade100;
-                                        myColor2 = Colors.orange.shade50;
+                                        myColor1 = Colors.orange.shade50;
                                       });
                                       Navigator.of(context).pop();
                                     },
@@ -253,7 +253,7 @@ class _EditNotePageState extends State<EditNotePage> {
                                     onTap: () {
                                       setState(() {
                                         myColor = Colors.amber.shade100;
-                                        myColor2 = Colors.amber.shade50;
+                                        myColor1 = Colors.amber.shade50;
                                       });
                                       Navigator.of(context).pop();
                                     },
@@ -266,7 +266,7 @@ class _EditNotePageState extends State<EditNotePage> {
                                     onTap: () {
                                       setState(() {
                                         myColor = Colors.brown.shade100;
-                                        myColor2 = Colors.brown.shade50;
+                                        myColor1 = Colors.brown.shade50;
                                       });
                                       Navigator.of(context).pop();
                                     },
@@ -287,36 +287,99 @@ class _EditNotePageState extends State<EditNotePage> {
                                   GestureDetector(
                                     onTap: () {
                                       setState(() {
-                                        myColor = Colors.purpleAccent.shade200;
-                                        myColor2 = Colors.purpleAccent.shade100;
+                                        myColor = Colors.indigo.shade100;
+                                        myColor1 = Colors.indigo.shade50;
+                                      });
+                                      Navigator.of(context).pop();
+                                    },
+                                    child: CircleAvatar(
+                                      radius: 14,
+                                      backgroundColor: Colors.indigo.shade100,
+                                    ),
+                                  ),
+                                  GestureDetector(
+                                    onTap: () {
+                                      setState(() {
+                                        myColor = Colors.lime.shade100;
+                                        myColor1 = Colors.lime.shade50;
+                                      });
+                                      Navigator.of(context).pop();
+                                    },
+                                    child: CircleAvatar(
+                                      radius: 14,
+                                      backgroundColor: Colors.lime.shade100,
+                                    ),
+                                  ),
+                                  GestureDetector(
+                                    onTap: () {
+                                      setState(() {
+                                        myColor = Colors.deepOrange.shade100;
+                                        myColor1 = Colors.deepOrange.shade50;
                                       });
                                       Navigator.of(context).pop();
                                     },
                                     child: CircleAvatar(
                                       radius: 14,
                                       backgroundColor:
-                                          Colors.purpleAccent.shade100,
+                                          Colors.deepOrange.shade100,
+                                    ),
+                                  ),
+                                  GestureDetector(
+                                    onTap: () {
+                                      setState(() {
+                                        myColor = Colors.lightGreen.shade100;
+                                        myColor1 = Colors.lightGreen.shade50;
+                                      });
+                                      Navigator.of(context).pop();
+                                    },
+                                    child: CircleAvatar(
+                                      radius: 14,
+                                      backgroundColor:
+                                          Colors.lightGreen.shade100,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 5,
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                children: [
+                                  GestureDetector(
+                                    onTap: () {
+                                      setState(() {
+                                        myColor = Colors.purpleAccent.shade200;
+                                        myColor1 = Colors.purpleAccent.shade100;
+                                      });
+                                      Navigator.of(context).pop();
+                                    },
+                                    child: CircleAvatar(
+                                      radius: 14,
+                                      backgroundColor:
+                                          Colors.purpleAccent.shade200,
                                     ),
                                   ),
                                   GestureDetector(
                                     onTap: () {
                                       setState(() {
                                         myColor = Colors.blueAccent.shade200;
-                                        myColor2 = Colors.blueAccent.shade100;
+                                        myColor1 = Colors.blueAccent.shade100;
                                       });
                                       Navigator.of(context).pop();
                                     },
                                     child: CircleAvatar(
                                       radius: 14,
                                       backgroundColor:
-                                          Colors.blueAccent.shade100,
+                                          Colors.blueAccent.shade200,
                                     ),
                                   ),
                                   GestureDetector(
                                     onTap: () {
                                       setState(() {
                                         myColor = Colors.deepPurple.shade100;
-                                        myColor2 = Colors.deepPurple.shade50;
+                                        myColor1 = Colors.deepPurple.shade50;
                                       });
                                       Navigator.of(context).pop();
                                     },
@@ -330,7 +393,7 @@ class _EditNotePageState extends State<EditNotePage> {
                                     onTap: () {
                                       setState(() {
                                         myColor = Colors.pinkAccent.shade200;
-                                        myColor2 = Colors.pinkAccent.shade100;
+                                        myColor1 = Colors.pinkAccent.shade100;
                                       });
                                       Navigator.of(context).pop();
                                     },
@@ -338,46 +401,6 @@ class _EditNotePageState extends State<EditNotePage> {
                                       radius: 14,
                                       backgroundColor:
                                           Colors.pinkAccent.shade100,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  const SizedBox(
-                                    width: 15,
-                                  ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      setState(() {
-                                        myColor = Colors.indigo.shade100;
-                                        myColor2 = Colors.indigo.shade50;
-                                      });
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: CircleAvatar(
-                                      radius: 14,
-                                      backgroundColor: Colors.indigo.shade100,
-                                    ),
-                                  ),
-                                  const SizedBox(
-                                    width: 33,
-                                  ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      setState(() {
-                                        myColor = Colors.lime.shade100;
-                                        myColor2 = Colors.lime.shade50;
-                                      });
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: CircleAvatar(
-                                      radius: 14,
-                                      backgroundColor: Colors.lime.shade100,
                                     ),
                                   ),
                                 ],
@@ -486,7 +509,7 @@ class _EditNotePageState extends State<EditNotePage> {
           ),
         ),
       ),
-      backgroundColor: myColor,
+      // backgroundColor: myColor,
     );
   }
 }

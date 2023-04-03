@@ -132,4 +132,96 @@ class Global {
     Colors.cyan.shade100,
     Colors.deepOrange.shade100,
   ];
+
+  static List<Map<String, Color>> myColor = [
+    {
+      'color': Colors.yellow.shade100,
+    },
+    {
+      'color': Colors.purple.shade100,
+    },
+    {
+      'color': Colors.blueGrey.shade100,
+    },
+    {
+      'color': Colors.pink.shade100,
+    },
+  ];
+  static List<Map<String, Color>> myColor1 = [
+    {
+      'color': Colors.green.shade100,
+    },
+    {
+      'color': Colors.red.shade100,
+    },
+    {
+      'color': Colors.blue.shade100,
+    },
+    {
+      'color': Colors.cyan.shade100,
+    },
+  ];
+  static List<Map<String, Color>> myColor2 = [
+    {
+      'color': Colors.teal.shade100,
+    },
+    {
+      'color': Colors.orange.shade100,
+    },
+    {
+      'color': Colors.brown.shade100,
+    },
+    {
+      'color': Colors.amber.shade100,
+    },
+  ];
+  static List<Map<String, Color>> myColor3 = [
+    {
+      'color': Colors.indigo.shade100,
+    },
+    {
+      'color': Colors.lime.shade100,
+    },
+    {
+      'color': Colors.deepOrange.shade100,
+    },
+    {
+      'color': Colors.lightGreen.shade100,
+    },
+  ];
+  static List<Map<String, Color>> myColor4 = [
+    {
+      'color': Colors.purpleAccent.shade200,
+    },
+    {
+      'color': Colors.blueAccent.shade200,
+    },
+    {
+      'color': Colors.deepPurple.shade100,
+    },
+    {
+      'color': Colors.pinkAccent.shade200,
+    },
+  ];
+
+  static List<Color> bsColor = [
+    Colors.yellow.shade50,
+    Colors.purple.shade50,
+    Colors.blueGrey.shade50,
+    Colors.pink.shade50,
+    Colors.green.shade50,
+    Colors.blue.shade50,
+    Colors.red.shade50,
+    Colors.cyan.shade50,
+    Colors.teal.shade50,
+    Colors.orange.shade50,
+    Colors.amber.shade50,
+    Colors.brown.shade50,
+    Colors.purpleAccent.shade100,
+    Colors.blueAccent.shade100,
+    Colors.deepPurple.shade50,
+    Colors.pinkAccent.shade100,
+    Colors.indigo.shade50,
+    Colors.lime.shade50,
+  ];
 }

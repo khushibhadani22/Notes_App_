@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:firebase_notes/viewer/screens/AddNotesPage.dart';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -21,6 +23,13 @@ class _HomePageState extends State<HomePage> {
   final GlobalKey<FormState> editNoteKey = GlobalKey<FormState>();
   final TextEditingController titleController = TextEditingController();
   final TextEditingController subTitleController = TextEditingController();
+  Random random = Random();
+
+  int i = 0;
+
+  void changeIndex() {
+    setState(() => i = random.nextInt(3));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +91,7 @@ class _HomePageState extends State<HomePage> {
                               'subtitle': data[i]['subtitle']
                             };
                             showModalBottomSheet(
-                                backgroundColor: myColor,
+                                // backgroundColor: myColor,
                                 shape: const RoundedRectangleBorder(
                                     borderRadius: BorderRadius.vertical(
                                         top: Radius.circular(50))),
@@ -245,7 +254,7 @@ class _HomePageState extends State<HomePage> {
                                                   child: Container(
                                                     height: 60,
                                                     width: double.infinity,
-                                                    color: myColor2,
+                                                    color: myColor1,
                                                     child: Row(
                                                       mainAxisAlignment:
                                                           MainAxisAlignment
@@ -300,7 +309,7 @@ class _HomePageState extends State<HomePage> {
                                                                                 onTap: () {
                                                                                   setState(() {
                                                                                     myColor = Colors.yellow.shade100;
-                                                                                    myColor2 = Colors.yellow.shade50;
+                                                                                    myColor1 = Colors.yellow.shade50;
                                                                                   });
                                                                                   Navigator.of(context).pop();
                                                                                 },
@@ -313,7 +322,7 @@ class _HomePageState extends State<HomePage> {
                                                                                 onTap: () {
                                                                                   setState(() {
                                                                                     myColor = Colors.purple.shade100;
-                                                                                    myColor2 = Colors.purple.shade50;
+                                                                                    myColor1 = Colors.purple.shade50;
                                                                                   });
                                                                                   Navigator.of(context).pop();
                                                                                 },
@@ -326,7 +335,7 @@ class _HomePageState extends State<HomePage> {
                                                                                 onTap: () {
                                                                                   setState(() {
                                                                                     myColor = Colors.blueGrey.shade100;
-                                                                                    myColor2 = Colors.blueGrey.shade50;
+                                                                                    myColor1 = Colors.blueGrey.shade50;
                                                                                   });
                                                                                   Navigator.of(context).pop();
                                                                                 },
@@ -339,7 +348,7 @@ class _HomePageState extends State<HomePage> {
                                                                                 onTap: () {
                                                                                   setState(() {
                                                                                     myColor = Colors.pink.shade100;
-                                                                                    myColor2 = Colors.pink.shade50;
+                                                                                    myColor1 = Colors.pink.shade50;
                                                                                   });
                                                                                   Navigator.of(context).pop();
                                                                                 },
@@ -362,7 +371,7 @@ class _HomePageState extends State<HomePage> {
                                                                                 onTap: () {
                                                                                   setState(() {
                                                                                     myColor = Colors.green.shade100;
-                                                                                    myColor2 = Colors.green.shade50;
+                                                                                    myColor1 = Colors.green.shade50;
                                                                                   });
                                                                                   Navigator.of(context).pop();
                                                                                 },
@@ -375,7 +384,7 @@ class _HomePageState extends State<HomePage> {
                                                                                 onTap: () {
                                                                                   setState(() {
                                                                                     myColor = Colors.blue.shade100;
-                                                                                    myColor2 = Colors.blue.shade50;
+                                                                                    myColor1 = Colors.blue.shade50;
                                                                                   });
                                                                                   Navigator.of(context).pop();
                                                                                 },
@@ -388,7 +397,7 @@ class _HomePageState extends State<HomePage> {
                                                                                 onTap: () {
                                                                                   setState(() {
                                                                                     myColor = Colors.red.shade100;
-                                                                                    myColor2 = Colors.red.shade50;
+                                                                                    myColor1 = Colors.red.shade50;
                                                                                   });
                                                                                   Navigator.of(context).pop();
                                                                                 },
@@ -401,7 +410,7 @@ class _HomePageState extends State<HomePage> {
                                                                                 onTap: () {
                                                                                   setState(() {
                                                                                     myColor = Colors.cyan.shade100;
-                                                                                    myColor2 = Colors.cyan.shade50;
+                                                                                    myColor1 = Colors.cyan.shade50;
                                                                                   });
                                                                                   Navigator.of(context).pop();
                                                                                 },
@@ -424,7 +433,7 @@ class _HomePageState extends State<HomePage> {
                                                                                 onTap: () {
                                                                                   setState(() {
                                                                                     myColor = Colors.teal.shade100;
-                                                                                    myColor2 = Colors.teal.shade50;
+                                                                                    myColor1 = Colors.teal.shade50;
                                                                                   });
                                                                                   Navigator.of(context).pop();
                                                                                 },
@@ -437,7 +446,7 @@ class _HomePageState extends State<HomePage> {
                                                                                 onTap: () {
                                                                                   setState(() {
                                                                                     myColor = Colors.orange.shade100;
-                                                                                    myColor2 = Colors.orange.shade50;
+                                                                                    myColor1 = Colors.orange.shade50;
                                                                                   });
                                                                                   Navigator.of(context).pop();
                                                                                 },
@@ -450,7 +459,7 @@ class _HomePageState extends State<HomePage> {
                                                                                 onTap: () {
                                                                                   setState(() {
                                                                                     myColor = Colors.amber.shade100;
-                                                                                    myColor2 = Colors.amber.shade50;
+                                                                                    myColor1 = Colors.amber.shade50;
                                                                                   });
                                                                                   Navigator.of(context).pop();
                                                                                 },
@@ -463,7 +472,7 @@ class _HomePageState extends State<HomePage> {
                                                                                 onTap: () {
                                                                                   setState(() {
                                                                                     myColor = Colors.brown.shade100;
-                                                                                    myColor2 = Colors.brown.shade50;
+                                                                                    myColor1 = Colors.brown.shade50;
                                                                                   });
                                                                                   Navigator.of(context).pop();
                                                                                 },
@@ -485,34 +494,96 @@ class _HomePageState extends State<HomePage> {
                                                                               GestureDetector(
                                                                                 onTap: () {
                                                                                   setState(() {
-                                                                                    myColor = Colors.purpleAccent.shade200;
-                                                                                    myColor2 = Colors.purpleAccent.shade100;
+                                                                                    myColor = Colors.indigo.shade100;
+                                                                                    myColor1 = Colors.indigo.shade50;
                                                                                   });
                                                                                   Navigator.of(context).pop();
                                                                                 },
                                                                                 child: CircleAvatar(
                                                                                   radius: 14,
-                                                                                  backgroundColor: Colors.purpleAccent.shade100,
+                                                                                  backgroundColor: Colors.indigo.shade100,
+                                                                                ),
+                                                                              ),
+                                                                              GestureDetector(
+                                                                                onTap: () {
+                                                                                  setState(() {
+                                                                                    myColor = Colors.lime.shade100;
+                                                                                    myColor1 = Colors.lime.shade50;
+                                                                                  });
+                                                                                  Navigator.of(context).pop();
+                                                                                },
+                                                                                child: CircleAvatar(
+                                                                                  radius: 14,
+                                                                                  backgroundColor: Colors.lime.shade100,
+                                                                                ),
+                                                                              ),
+                                                                              GestureDetector(
+                                                                                onTap: () {
+                                                                                  setState(() {
+                                                                                    myColor = Colors.deepOrange.shade100;
+                                                                                    myColor1 = Colors.deepOrange.shade50;
+                                                                                  });
+                                                                                  Navigator.of(context).pop();
+                                                                                },
+                                                                                child: CircleAvatar(
+                                                                                  radius: 14,
+                                                                                  backgroundColor: Colors.deepOrange.shade100,
+                                                                                ),
+                                                                              ),
+                                                                              GestureDetector(
+                                                                                onTap: () {
+                                                                                  setState(() {
+                                                                                    myColor = Colors.lightGreen.shade100;
+                                                                                    myColor1 = Colors.lightGreen.shade50;
+                                                                                  });
+                                                                                  Navigator.of(context).pop();
+                                                                                },
+                                                                                child: CircleAvatar(
+                                                                                  radius: 14,
+                                                                                  backgroundColor: Colors.lightGreen.shade100,
+                                                                                ),
+                                                                              ),
+                                                                            ],
+                                                                          ),
+                                                                          const SizedBox(
+                                                                            height:
+                                                                                5,
+                                                                          ),
+                                                                          Row(
+                                                                            mainAxisAlignment:
+                                                                                MainAxisAlignment.spaceAround,
+                                                                            children: [
+                                                                              GestureDetector(
+                                                                                onTap: () {
+                                                                                  setState(() {
+                                                                                    myColor = Colors.purpleAccent.shade200;
+                                                                                    myColor1 = Colors.purpleAccent.shade100;
+                                                                                  });
+                                                                                  Navigator.of(context).pop();
+                                                                                },
+                                                                                child: CircleAvatar(
+                                                                                  radius: 14,
+                                                                                  backgroundColor: Colors.purpleAccent.shade200,
                                                                                 ),
                                                                               ),
                                                                               GestureDetector(
                                                                                 onTap: () {
                                                                                   setState(() {
                                                                                     myColor = Colors.blueAccent.shade200;
-                                                                                    myColor2 = Colors.blueAccent.shade100;
+                                                                                    myColor1 = Colors.blueAccent.shade100;
                                                                                   });
                                                                                   Navigator.of(context).pop();
                                                                                 },
                                                                                 child: CircleAvatar(
                                                                                   radius: 14,
-                                                                                  backgroundColor: Colors.blueAccent.shade100,
+                                                                                  backgroundColor: Colors.blueAccent.shade200,
                                                                                 ),
                                                                               ),
                                                                               GestureDetector(
                                                                                 onTap: () {
                                                                                   setState(() {
                                                                                     myColor = Colors.deepPurple.shade100;
-                                                                                    myColor2 = Colors.deepPurple.shade50;
+                                                                                    myColor1 = Colors.deepPurple.shade50;
                                                                                   });
                                                                                   Navigator.of(context).pop();
                                                                                 },
@@ -525,55 +596,13 @@ class _HomePageState extends State<HomePage> {
                                                                                 onTap: () {
                                                                                   setState(() {
                                                                                     myColor = Colors.pinkAccent.shade200;
-                                                                                    myColor2 = Colors.pinkAccent.shade100;
+                                                                                    myColor1 = Colors.pinkAccent.shade100;
                                                                                   });
                                                                                   Navigator.of(context).pop();
                                                                                 },
                                                                                 child: CircleAvatar(
                                                                                   radius: 14,
                                                                                   backgroundColor: Colors.pinkAccent.shade100,
-                                                                                ),
-                                                                              ),
-                                                                            ],
-                                                                          ),
-                                                                          const SizedBox(
-                                                                            height:
-                                                                                5,
-                                                                          ),
-                                                                          Row(
-                                                                            mainAxisAlignment:
-                                                                                MainAxisAlignment.start,
-                                                                            children: [
-                                                                              const SizedBox(
-                                                                                width: 15,
-                                                                              ),
-                                                                              GestureDetector(
-                                                                                onTap: () {
-                                                                                  setState(() {
-                                                                                    myColor = Colors.indigo.shade100;
-                                                                                    myColor2 = Colors.indigo.shade50;
-                                                                                  });
-                                                                                  Navigator.of(context).pop();
-                                                                                },
-                                                                                child: CircleAvatar(
-                                                                                  radius: 14,
-                                                                                  backgroundColor: Colors.indigo.shade100,
-                                                                                ),
-                                                                              ),
-                                                                              const SizedBox(
-                                                                                width: 33,
-                                                                              ),
-                                                                              GestureDetector(
-                                                                                onTap: () {
-                                                                                  setState(() {
-                                                                                    myColor = Colors.lime.shade100;
-                                                                                    myColor2 = Colors.lime.shade50;
-                                                                                  });
-                                                                                  Navigator.of(context).pop();
-                                                                                },
-                                                                                child: CircleAvatar(
-                                                                                  radius: 14,
-                                                                                  backgroundColor: Colors.lime.shade100,
                                                                                 ),
                                                                               ),
                                                                             ],
@@ -772,8 +801,8 @@ class _HomePageState extends State<HomePage> {
                               padding: const EdgeInsets.all(8),
                               margin: const EdgeInsets.all(15),
                               decoration: BoxDecoration(
-                                color: myColor,
-                                //    color: Global.cardsColor[i],
+                                // color: myColor,
+                                color: Global.cardsColor[i],
                                 borderRadius: BorderRadius.circular(10),
                                 border: Border.all(
                                   color: Colors.purple.shade900,
