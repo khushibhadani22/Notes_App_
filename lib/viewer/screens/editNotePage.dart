@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_notes/helper/FireStoreHelper.dart';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -18,9 +19,11 @@ class _EditNotePageState extends State<EditNotePage> {
   final TextEditingController typeController = TextEditingController();
   String? note;
   String? type;
+  Map<Object, Object> newData = {};
   @override
   Widget build(BuildContext context) {
-    Map editValue = ModalRoute.of(context)!.settings.arguments as Map;
+    QueryDocumentSnapshot editValue =
+        ModalRoute.of(context)!.settings.arguments as QueryDocumentSnapshot;
 
     return Scaffold(
       appBar: AppBar(
@@ -46,8 +49,8 @@ class _EditNotePageState extends State<EditNotePage> {
           ),
           OutlinedButton(
               onPressed: () {
-                StoreHelper.storeHelper.removeNotes(id: 'id');
                 Navigator.of(context).pop();
+                StoreHelper.storeHelper.removeNotes(id: editValue['id']);
               },
               child: const Icon(
                 Icons.delete,
@@ -57,7 +60,12 @@ class _EditNotePageState extends State<EditNotePage> {
             width: 6,
           ),
           OutlinedButton(
-            onPressed: () {},
+            onPressed: () {
+              StoreHelper.storeHelper
+                  .editNote(id: editValue['id'], data: newData);
+
+              Navigator.of(context).pop();
+            },
             child: const Text(
               "Done",
               style: TextStyle(color: Colors.black),
@@ -470,12 +478,11 @@ class _EditNotePageState extends State<EditNotePage> {
       body: Padding(
         padding: const EdgeInsets.all(10),
         child: Form(
-          key: editFormKey,
           child: Column(
             children: [
               TextFormField(
-                onSaved: (val) {
-                  editValue['title'] = val as Object;
+                onChanged: (val) {
+                  newData['title'] = val;
                 },
                 initialValue: editValue['title'],
                 textInputAction: TextInputAction.next,
@@ -484,8 +491,8 @@ class _EditNotePageState extends State<EditNotePage> {
                 ),
               ),
               TextFormField(
-                onSaved: (val) {
-                  editValue['subtitle'] = val as Object;
+                onChanged: (val) {
+                  newData['subtitle'] = val;
                 },
                 maxLines: null,
                 initialValue: editValue['subtitle'],
@@ -493,23 +500,12 @@ class _EditNotePageState extends State<EditNotePage> {
                 decoration: const InputDecoration(
                   border: InputBorder.none,
                 ),
-                onFieldSubmitted: (val) {
-                  if (editFormKey.currentState!.validate()) {
-                    editFormKey.currentState!.save();
-
-                    StoreHelper.storeHelper.editNote(
-                        id: ['id'].toString(),
-                        data: editValue as Map<Object, Object>);
-
-                    Navigator.of(context).pop();
-                  }
-                },
               ),
             ],
           ),
         ),
       ),
-      // backgroundColor: myColor,
+      backgroundColor: myColor,
     );
   }
 }

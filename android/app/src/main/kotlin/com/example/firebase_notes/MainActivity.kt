@@ -1,4 +1,4 @@
-package com.kb22.firebase_notes
+package com.kbbk.firebase_notes
 
 import io.flutter.embedding.android.FlutterActivity
 
