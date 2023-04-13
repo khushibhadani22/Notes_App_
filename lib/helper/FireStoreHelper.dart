@@ -11,18 +11,22 @@ class StoreHelper {
     collectionReference = fireStore.collection('notes');
   }
 
-  Future<void> addNote({
-    required String title,
-    required String subtitle,
-  }) async {
+  Future<void> addNote(
+      {required String title,
+      required String subtitle,
+      required String date,
+      required String time}) async {
     connectCollection();
     String nId = DateTime.now().millisecondsSinceEpoch.toString();
+
     await collectionReference!
         .doc(nId)
         .set({
           'id': nId,
           'title': title,
           'subtitle': subtitle,
+          'time': time,
+          'date': date,
         })
         .then(
           (value) => print("note is add...."),

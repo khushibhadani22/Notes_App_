@@ -15,17 +15,15 @@ class _AddNotePageState extends State<AddNotePage> {
   String? title;
   String? subtitle;
 
+  DateTime date = DateTime.now();
+  DateTime time = DateTime.now();
+
+  String currentDate = "";
+  String currentTime = "";
   final GlobalKey<FormState> notesKey = GlobalKey<FormState>();
 
   final TextEditingController titleController = TextEditingController();
   final TextEditingController subTitleController = TextEditingController();
-  // Random random = Random();
-  //
-  // int i = 0;
-  //
-  // void changeIndex() {
-  //   setState(() => i = random.nextInt(3));
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +66,10 @@ class _AddNotePageState extends State<AddNotePage> {
                 await StoreHelper.storeHelper.addNote(
                   title: title!,
                   subtitle: subtitle!,
+                  date: currentDate,
+                  time: currentTime,
                 );
+
                 Navigator.of(context).pop();
 
                 titleController.clear();
@@ -603,7 +604,7 @@ class _AddNotePageState extends State<AddNotePage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "${Global.currentDay} ${Global.months[Global.currentMonth - 1]},${Global.currentYear}",
+                    currentDate = "${date.day}/${date.month}/${date.year}",
                     style: const TextStyle(
                         color: Colors.black, fontWeight: FontWeight.bold),
                   ),
@@ -614,7 +615,7 @@ class _AddNotePageState extends State<AddNotePage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "${Global.currentHour}:${Global.currentMint}",
+                    currentTime = "${date.hour}:${date.minute}",
                     style: const TextStyle(
                         color: Colors.black, fontWeight: FontWeight.bold),
                   )

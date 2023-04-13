@@ -23,6 +23,7 @@ class _HomePageState extends State<HomePage> {
   final TextEditingController titleController = TextEditingController();
   final TextEditingController subTitleController = TextEditingController();
   Random random = Random();
+  Map<Object, Object> editValue = {};
 
   int i = 0;
 
@@ -814,7 +815,8 @@ class _HomePageState extends State<HomePage> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    "${Global.currentDay} ${Global.months[Global.currentMonth - 1]},${Global.currentYear}",
+                                    data[i]['date'],
+                                    // "${Global.currentDay} ${Global.months[Global.currentMonth - 1]},${Global.currentYear}",
                                     style: const TextStyle(
                                         fontWeight: FontWeight.w700,
                                         fontSize: 18),
@@ -840,7 +842,8 @@ class _HomePageState extends State<HomePage> {
                                     crossAxisAlignment: CrossAxisAlignment.end,
                                     children: [
                                       Text(
-                                        "${Global.currentHour}:${Global.currentMint}",
+                                        data[i]['time'],
+                                        // "${Global.currentHour}:${Global.currentMint}",
                                         style: const TextStyle(
                                             fontWeight: FontWeight.w700,
                                             fontSize: 18),
