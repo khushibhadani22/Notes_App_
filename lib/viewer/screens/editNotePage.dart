@@ -26,6 +26,7 @@ class _EditNotePageState extends State<EditNotePage> {
         ModalRoute.of(context)!.settings.arguments as QueryDocumentSnapshot;
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: myColor,
         leading: OutlinedButton(

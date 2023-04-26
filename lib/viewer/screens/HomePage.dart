@@ -5,7 +5,6 @@ import 'package:permission_handler/permission_handler.dart';
 import '../../helper/FireBaseAuthHelper.dart';
 import '../../helper/FireStoreHelper.dart';
 import '../../helper/Global.dart';
-import 'AddNotesPage.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);

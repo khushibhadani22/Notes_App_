@@ -41,6 +41,8 @@ dependencies:
   google_sign_in: ^6.0.2
   cloud_firestore: ^4.5.0
   permission_handler: ^10.2.0
+  shared_preferences:
+  share_plus:
 
 
 dev_dependencies:

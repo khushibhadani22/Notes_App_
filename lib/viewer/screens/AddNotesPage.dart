@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:share_plus/share_plus.dart';
 
 import '../../helper/FireStoreHelper.dart';
 import '../../helper/Global.dart';
@@ -30,29 +31,28 @@ class _AddNotePageState extends State<AddNotePage> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        leading: OutlinedButton(
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-          child: const Icon(
-            Icons.arrow_back_ios,
-            color: Colors.black,
+        leading: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: OutlinedButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: const Icon(
+              Icons.arrow_back_ios,
+              color: Colors.black,
+            ),
           ),
         ),
         actions: [
           OutlinedButton(
-              onPressed: () {},
+              onPressed: () {
+                if (notesKey.currentState!.validate()) {
+                  notesKey.currentState!.save();
+                  Share.share('$title\n$subtitle');
+                }
+              },
               child: const Icon(
                 Icons.send_outlined,
-                color: Colors.black,
-              )),
-          const SizedBox(
-            width: 6,
-          ),
-          OutlinedButton(
-              onPressed: () {},
-              child: const Icon(
-                Icons.more_horiz,
                 color: Colors.black,
               )),
           const SizedBox(
@@ -85,7 +85,10 @@ class _AddNotePageState extends State<AddNotePage> {
               "Done",
               style: TextStyle(color: Colors.black),
             ),
-          )
+          ),
+          const SizedBox(
+            width: 6,
+          ),
         ],
         elevation: 0,
         backgroundColor: myColor,

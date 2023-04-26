@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../helper/FireBaseAuthHelper.dart';
+import '../../helper/Global.dart';
 
 class SignInPage extends StatefulWidget {
-  const SignInPage({Key? key}) : super(key: key);
+  final SharedPreferences prefs;
+
+  const SignInPage({Key? key, required this.prefs}) : super(key: key);
 
   @override
   State<SignInPage> createState() => _SignInPageState();
@@ -14,9 +18,30 @@ class _SignInPageState extends State<SignInPage> {
   final TextEditingController passwordController = TextEditingController();
   String? email;
   String? password;
+
+  bool isLoggedIn = false;
+  checkLogin() {
+    isLoggedIn = widget.prefs.getBool(sfLogin) ?? false;
+    if (isLoggedIn) {
+      Navigator.of(context).pushReplacementNamed('/');
+      widget.prefs.setBool(sfLogin, false);
+    }
+  }
+
+  login() {
+    widget.prefs.setBool(sfLogin, true);
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    checkLogin();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Padding(
@@ -256,6 +281,8 @@ class _SignInPageState extends State<SignInPage> {
                             await AuthHelper.authHelper.logInWithAnonymously();
 
                         if (res['user'] != null) {
+                          login();
+
                           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                             content:
                                 const Text("Login Successful As Guest....."),

@@ -1,4 +1,6 @@
+import 'package:firebase_notes/helper/Global.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../helper/FireBaseAuthHelper.dart';
 
@@ -18,9 +20,11 @@ class _SignUpPageState extends State<SignUpPage> {
   String? email;
   String? password;
   String? name;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Padding(

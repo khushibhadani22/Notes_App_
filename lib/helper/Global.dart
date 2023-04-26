@@ -225,3 +225,5 @@ class Global {
     Colors.lime.shade50,
   ];
 }
+
+String sfLogin = 'login';
