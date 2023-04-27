@@ -37,9 +37,7 @@ void main() async {
           ),
       'signUp': (context) => const SignUpPage(),
       'splash': (context) => const SplashPage(),
-      'welcome': (context) => WelcomePage(
-            prefs: preferences,
-          ),
+      'welcome': (context) => const WelcomePage(),
     },
   ));
 }
