@@ -171,6 +171,7 @@ class _SignInPageState extends State<SignInPage> {
                             .signIn(email: email!, password: password!);
 
                         if (res['user'] != null) {
+                          login();
                           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                             content: const Text("Login In Successful....."),
                             behavior: SnackBarBehavior.floating,
@@ -243,6 +244,7 @@ class _SignInPageState extends State<SignInPage> {
                         Map<String, dynamic> res =
                             await AuthHelper.authHelper.signInWithGoogle();
                         if (res['user'] != null) {
+                          login();
                           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                             content:
                                 const Text("Login Successful With Google....."),
