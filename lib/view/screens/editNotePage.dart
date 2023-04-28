@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_notes/helper/FireStoreHelper.dart';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:share_plus/share_plus.dart';
 
 import '../../helper/Global.dart';
 import 'AddNotesPage.dart';
@@ -29,18 +30,26 @@ class _EditNotePageState extends State<EditNotePage> {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: myColor,
-        leading: OutlinedButton(
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-          child: const Icon(
-            Icons.arrow_back_ios,
-            color: Colors.black,
+        leading: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: OutlinedButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            child: const Icon(
+              Icons.arrow_back_ios,
+              color: Colors.black,
+            ),
           ),
         ),
         actions: [
           OutlinedButton(
-              onPressed: () {},
+              onPressed: () {
+                setState(() {
+                  Share.share(
+                      "Today's Note :- ${newData['title']}\n${newData['subtitle']}");
+                });
+              },
               child: const Icon(
                 Icons.send_outlined,
                 color: Colors.black,
@@ -71,6 +80,9 @@ class _EditNotePageState extends State<EditNotePage> {
               "Done",
               style: TextStyle(color: Colors.black),
             ),
+          ),
+          const SizedBox(
+            width: 6,
           ),
         ],
       ),

@@ -48,7 +48,7 @@ class _AddNotePageState extends State<AddNotePage> {
               onPressed: () {
                 if (notesKey.currentState!.validate()) {
                   notesKey.currentState!.save();
-                  Share.share('$title\n$subtitle');
+                  Share.share("Today's Note :- $title\n$subtitle");
                 }
               },
               child: const Icon(
