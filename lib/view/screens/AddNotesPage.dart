@@ -96,7 +96,9 @@ class _AddNotePageState extends State<AddNotePage> {
       ),
       bottomNavigationBar: Container(
         height: 60,
-        color: myColor1,
+        decoration: BoxDecoration(color: myColor1, boxShadow: const [
+          BoxShadow(color: Colors.black12, spreadRadius: 5)
+        ]),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
@@ -123,418 +125,96 @@ class _AddNotePageState extends State<AddNotePage> {
                       builder: (context) {
                         return AlertDialog(
                           content: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
-                                children: [
-                                  GestureDetector(
-                                    onTap: () {
-                                      setState(() {
-                                        myColor = Colors.yellow.shade100;
-                                        myColor1 = Colors.yellow.shade50;
-                                      });
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: CircleAvatar(
-                                      radius: 14,
-                                      backgroundColor: Colors.yellow.shade100,
-                                    ),
-                                  ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      setState(() {
-                                        myColor = Colors.purple.shade100;
-                                        myColor1 = Colors.purple.shade50;
-                                      });
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: CircleAvatar(
-                                      radius: 14,
-                                      backgroundColor: Colors.purple.shade100,
-                                    ),
-                                  ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      setState(() {
-                                        myColor = Colors.blueGrey.shade100;
-                                        myColor1 = Colors.blueGrey.shade50;
-                                      });
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: CircleAvatar(
-                                      radius: 14,
-                                      backgroundColor: Colors.blueGrey.shade100,
-                                    ),
-                                  ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      setState(() {
-                                        myColor = Colors.pink.shade100;
-                                        myColor1 = Colors.pink.shade50;
-                                      });
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: CircleAvatar(
-                                      radius: 14,
-                                      backgroundColor: Colors.pink.shade100,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
-                                children: [
-                                  GestureDetector(
-                                    onTap: () {
-                                      setState(() {
-                                        myColor = Colors.green.shade100;
-                                        myColor1 = Colors.green.shade50;
-                                      });
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: CircleAvatar(
-                                      radius: 14,
-                                      backgroundColor: Colors.green.shade100,
-                                    ),
-                                  ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      setState(() {
-                                        myColor = Colors.blue.shade100;
-                                        myColor1 = Colors.blue.shade50;
-                                      });
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: CircleAvatar(
-                                      radius: 14,
-                                      backgroundColor: Colors.blue.shade100,
-                                    ),
-                                  ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      setState(() {
-                                        myColor = Colors.red.shade100;
-                                        myColor1 = Colors.red.shade50;
-                                      });
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: CircleAvatar(
-                                      radius: 14,
-                                      backgroundColor: Colors.red.shade100,
-                                    ),
-                                  ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      setState(() {
-                                        myColor = Colors.cyan.shade100;
-                                        myColor1 = Colors.cyan.shade50;
-                                      });
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: CircleAvatar(
-                                      radius: 14,
-                                      backgroundColor: Colors.cyan.shade100,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
-                                children: [
-                                  GestureDetector(
-                                    onTap: () {
-                                      setState(() {
-                                        myColor = Colors.teal.shade100;
-                                        myColor1 = Colors.teal.shade50;
-                                      });
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: CircleAvatar(
-                                      radius: 14,
-                                      backgroundColor: Colors.teal.shade100,
-                                    ),
-                                  ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      setState(() {
-                                        myColor = Colors.orange.shade100;
-                                        myColor1 = Colors.orange.shade50;
-                                      });
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: CircleAvatar(
-                                      radius: 14,
-                                      backgroundColor: Colors.orange.shade100,
-                                    ),
-                                  ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      setState(() {
-                                        myColor = Colors.amber.shade100;
-                                        myColor1 = Colors.amber.shade50;
-                                      });
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: CircleAvatar(
-                                      radius: 14,
-                                      backgroundColor: Colors.amber.shade100,
-                                    ),
-                                  ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      setState(() {
-                                        myColor = Colors.brown.shade100;
-                                        myColor1 = Colors.brown.shade50;
-                                      });
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: CircleAvatar(
-                                      radius: 14,
-                                      backgroundColor: Colors.brown.shade100,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
-                                children: [
-                                  GestureDetector(
-                                    onTap: () {
-                                      setState(() {
-                                        myColor = Colors.indigo.shade100;
-                                        myColor1 = Colors.indigo.shade50;
-                                      });
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: CircleAvatar(
-                                      radius: 14,
-                                      backgroundColor: Colors.indigo.shade100,
-                                    ),
-                                  ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      setState(() {
-                                        myColor = Colors.lime.shade100;
-                                        myColor1 = Colors.lime.shade50;
-                                      });
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: CircleAvatar(
-                                      radius: 14,
-                                      backgroundColor: Colors.lime.shade100,
-                                    ),
-                                  ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      setState(() {
-                                        myColor = Colors.deepOrange.shade100;
-                                        myColor1 = Colors.deepOrange.shade50;
-                                      });
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: CircleAvatar(
-                                      radius: 14,
-                                      backgroundColor:
-                                          Colors.deepOrange.shade100,
-                                    ),
-                                  ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      setState(() {
-                                        myColor = Colors.lightGreen.shade100;
-                                        myColor1 = Colors.lightGreen.shade50;
-                                      });
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: CircleAvatar(
-                                      radius: 14,
-                                      backgroundColor:
-                                          Colors.lightGreen.shade100,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(
-                                height: 5,
-                              ),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
-                                children: [
-                                  GestureDetector(
-                                    onTap: () {
-                                      setState(() {
-                                        myColor = Colors.purpleAccent.shade200;
-                                        myColor1 = Colors.purpleAccent.shade100;
-                                      });
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: CircleAvatar(
-                                      radius: 14,
-                                      backgroundColor:
-                                          Colors.purpleAccent.shade200,
-                                    ),
-                                  ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      setState(() {
-                                        myColor = Colors.blueAccent.shade200;
-                                        myColor1 = Colors.blueAccent.shade100;
-                                      });
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: CircleAvatar(
-                                      radius: 14,
-                                      backgroundColor:
-                                          Colors.blueAccent.shade200,
-                                    ),
-                                  ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      setState(() {
-                                        myColor = Colors.deepPurple.shade100;
-                                        myColor1 = Colors.deepPurple.shade50;
-                                      });
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: CircleAvatar(
-                                      radius: 14,
-                                      backgroundColor:
-                                          Colors.deepPurple.shade100,
-                                    ),
-                                  ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      setState(() {
-                                        myColor = Colors.pinkAccent.shade200;
-                                        myColor1 = Colors.pinkAccent.shade100;
-                                      });
-                                      Navigator.of(context).pop();
-                                    },
-                                    child: CircleAvatar(
-                                      radius: 14,
-                                      backgroundColor:
-                                          Colors.pinkAccent.shade100,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          // content: Column(
-                          //   mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          //   mainAxisSize: MainAxisSize.min,
-                          //   children: [
-                          // Row(
-                          //   mainAxisAlignment:
-                          //       MainAxisAlignment.spaceAround,
-                          //   children: Global.myColor
-                          //       .map(
-                          //         (e) => GestureDetector(
-                          //           onTap: () {},
-                          //           child: CircleAvatar(
-                          //             radius: 14,
-                          //             backgroundColor: e['color'],
-                          //           ),
-                          //         ),
-                          //       )
-                          //       .toList(),
-                          // ),
-                          // const SizedBox(
-                          //   height: 5,
-                          // ),
-                          // Row(
-                          //   mainAxisAlignment:
-                          //       MainAxisAlignment.spaceAround,
-                          //   children: Global.myColor1
-                          //       .map(
-                          //         (e) => GestureDetector(
-                          //           onTap: () {},
-                          //           child: CircleAvatar(
-                          //             radius: 14,
-                          //             backgroundColor: e['color'],
-                          //           ),
-                          //         ),
-                          //       )
-                          //       .toList(),
-                          // ),
-                          // const SizedBox(
-                          //   height: 5,
-                          // ),
-                          // Row(
-                          //   mainAxisAlignment:
-                          //       MainAxisAlignment.spaceAround,
-                          //   children: Global.myColor2
-                          //       .map(
-                          //         (e) => GestureDetector(
-                          //           onTap: () {},
-                          //           child: CircleAvatar(
-                          //             radius: 14,
-                          //             backgroundColor: e['color'],
-                          //           ),
-                          //         ),
-                          //       )
-                          //       .toList(),
-                          // ),
-                          // const SizedBox(
-                          //   height: 5,
-                          // ),
-                          // Row(
-                          //   mainAxisAlignment:
-                          //       MainAxisAlignment.spaceAround,
-                          //   children: Global.myColor3
-                          //       .map(
-                          //         (e) => GestureDetector(
-                          //           onTap: () {
-                          //             setState(() {
-                          //               myColor2 = e['color'];
-                          //             });
-                          //             Navigator.of(context).pop();
-                          //           },
-                          //           child: CircleAvatar(
-                          //             radius: 14,
-                          //             backgroundColor: e['color'],
-                          //           ),
-                          //         ),
-                          //       )
-                          //       .toList(),
-                          // ),
-                          // const SizedBox(
-                          //   height: 5,
-                          // ),
-                          // Row(
-                          //   mainAxisAlignment:
-                          //       MainAxisAlignment.spaceAround,
-                          //   children: Global.myColor4
-                          //       .map(
-                          //         (e) => GestureDetector(
-                          //           onTap: () {},
-                          //           child: CircleAvatar(
-                          //             radius: 14,
-                          //             backgroundColor: e['color'],
-                          //           ),
-                          //         ),
-                          //       )
-                          //       .toList(),
-                          // ),
-                          //
-                          //   ],
-                          // ),
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: Global.myColor
+                                      .map((e) => GestureDetector(
+                                            onTap: () {
+                                              setState(() {
+                                                myColor = e['colors'];
+                                                myColor1 = e['color'];
+                                              });
+                                              Navigator.of(context).pop();
+                                            },
+                                            child: CircleAvatar(
+                                              radius: 14,
+                                              backgroundColor: e['colors'],
+                                            ),
+                                          ))
+                                      .toList(),
+                                ),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: Global.myColor2
+                                      .map((e) => GestureDetector(
+                                            onTap: () {
+                                              setState(() {
+                                                myColor = e['colors'];
+                                                myColor1 = e['color'];
+                                              });
+                                              Navigator.of(context).pop();
+                                            },
+                                            child: CircleAvatar(
+                                              radius: 14,
+                                              backgroundColor: e['colors'],
+                                            ),
+                                          ))
+                                      .toList(),
+                                ),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: Global.myColor3
+                                      .map((e) => GestureDetector(
+                                            onTap: () {
+                                              setState(() {
+                                                myColor = e['colors'];
+                                                myColor1 = e['color'];
+                                              });
+                                              Navigator.of(context).pop();
+                                            },
+                                            child: CircleAvatar(
+                                              radius: 14,
+                                              backgroundColor: e['colors'],
+                                            ),
+                                          ))
+                                      .toList(),
+                                ),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: Global.myColor4
+                                      .map((e) => GestureDetector(
+                                            onTap: () {
+                                              setState(() {
+                                                myColor = e['colors'];
+                                                myColor1 = e['color'];
+                                              });
+                                              Navigator.of(context).pop();
+                                            },
+                                            child: CircleAvatar(
+                                              radius: 14,
+                                              backgroundColor: e['colors'],
+                                            ),
+                                          ))
+                                      .toList(),
+                                ),
+                              ]),
                         );
                       });
                 },
@@ -607,6 +287,7 @@ class _AddNotePageState extends State<AddNotePage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
+                    // Global.selDate,
                     currentDate = "${date.day}/${date.month}/${date.year}",
                     style: const TextStyle(
                         color: Colors.black, fontWeight: FontWeight.bold),

@@ -135,74 +135,96 @@ class Global {
 
   static List<Map<String, Color>> myColor = [
     {
-      'color': Colors.yellow.shade100,
+      'colors': Colors.yellow.shade100,
+      'color': Colors.yellow.shade50,
     },
     {
-      'color': Colors.purple.shade100,
+      'colors': Colors.purple.shade100,
+      'color': Colors.purple.shade50,
     },
     {
-      'color': Colors.blueGrey.shade100,
+      'colors': Colors.blueGrey.shade100,
+      'color': Colors.blueGrey.shade50,
     },
     {
-      'color': Colors.pink.shade100,
+      'colors': Colors.pink.shade100,
+      'color': Colors.pink.shade50,
     },
   ];
-  static List<Map<String, Color>> myColor1 = [
-    {
-      'color': Colors.green.shade100,
-    },
-    {
-      'color': Colors.red.shade100,
-    },
-    {
-      'color': Colors.blue.shade100,
-    },
-    {
-      'color': Colors.cyan.shade100,
-    },
-  ];
+
   static List<Map<String, Color>> myColor2 = [
     {
-      'color': Colors.teal.shade100,
+      'colors': Colors.green.shade100,
+      'color': Colors.green.shade50,
     },
     {
-      'color': Colors.orange.shade100,
+      'colors': Colors.red.shade100,
+      'color': Colors.red.shade50,
     },
     {
-      'color': Colors.brown.shade100,
+      'colors': Colors.blue.shade100,
+      'color': Colors.blue.shade50,
     },
     {
-      'color': Colors.amber.shade100,
+      'colors': Colors.cyan.shade100,
+      'color': Colors.cyan.shade50,
     },
   ];
   static List<Map<String, Color>> myColor3 = [
     {
-      'color': Colors.indigo.shade100,
+      'colors': Colors.teal.shade100,
+      'color': Colors.teal.shade50,
     },
     {
-      'color': Colors.lime.shade100,
+      'colors': Colors.orange.shade100,
+      'color': Colors.orange.shade50,
     },
     {
-      'color': Colors.deepOrange.shade100,
+      'colors': Colors.brown.shade100,
+      'color': Colors.brown.shade50,
     },
     {
-      'color': Colors.lightGreen.shade100,
+      'colors': Colors.amber.shade100,
+      'color': Colors.amber.shade50,
     },
   ];
   static List<Map<String, Color>> myColor4 = [
     {
-      'color': Colors.purpleAccent.shade200,
+      'colors': Colors.indigo.shade100,
+      'color': Colors.indigo.shade50,
     },
     {
-      'color': Colors.blueAccent.shade200,
+      'colors': Colors.lime.shade100,
+      'color': Colors.lime.shade50,
     },
     {
-      'color': Colors.deepPurple.shade100,
+      'colors': Colors.deepOrange.shade100,
+      'color': Colors.deepOrange.shade50,
     },
     {
-      'color': Colors.pinkAccent.shade200,
+      'colors': Colors.lightGreen.shade100,
+      'color': Colors.lightGreen.shade50,
     },
   ];
+
+  // static List<Map<String, Color>> myColor5 = [
+  //   {
+  //     'colors': Colors.purpleAccent.shade200,
+  //     'color': Colors.purpleAccent.shade100,
+  //   },
+  //   {
+  //     'colors': Colors.blueAccent.shade200,
+  //     'color': Colors.blueAccent.shade100,
+  //   },
+  //   {
+  //     'colors': Colors.deepPurple.shade200,
+  //     'color': Colors.deepPurple.shade100,
+  //   },
+  //   {
+  //     'colors': Colors.pinkAccent.shade200,
+  //     'color': Colors.pinkAccent.shade100,
+  //   },
+  // ];
 
   static List<Color> bsColor = [
     Colors.yellow.shade50,
