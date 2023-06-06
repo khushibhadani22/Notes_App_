@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../helper/FireBaseAuthHelper.dart';
 import '../../helper/FireStoreHelper.dart';
@@ -45,6 +46,9 @@ class _HomePageState extends State<HomePage> {
             IconButton(
                 onPressed: () async {
                   await AuthHelper.authHelper.logOut();
+                  SharedPreferences prefs =
+                      await SharedPreferences.getInstance();
+                  await prefs.setBool('welcome', false);
                   Navigator.of(context)
                       .pushNamedAndRemoveUntil('signIn', (route) => false);
                 },

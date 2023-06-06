@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({
@@ -10,6 +11,12 @@ class WelcomePage extends StatefulWidget {
 }
 
 class _WelcomePageState extends State<WelcomePage> {
+  preference() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    await prefs.setBool('welcome', true);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,6 +44,7 @@ class _WelcomePageState extends State<WelcomePage> {
                         horizontal: 110, vertical: 10),
                     backgroundColor: Colors.purple.shade900),
                 onPressed: () {
+                  preference();
                   Navigator.of(context).pushNamed('language');
                 },
                 child: const Text(
@@ -48,6 +56,7 @@ class _WelcomePageState extends State<WelcomePage> {
             ),
             TextButton(
                 onPressed: () {
+                  preference();
                   Navigator.of(context).pushNamed('signIn');
                 },
                 child: Text(

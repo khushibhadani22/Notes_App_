@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
@@ -10,12 +11,20 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
+  checkPrefs() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    bool done = prefs.getBool('welcome') ?? false;
+    Timer(const Duration(seconds: 3), () {
+      Navigator.of(context)
+          .pushReplacementNamed(done == true ? '/' : 'welcome');
+    });
+  }
+
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 3), () {
-      Navigator.of(context).pushReplacementNamed('welcome');
-    });
+    checkPrefs();
   }
 
   @override
