@@ -268,30 +268,33 @@ class _EditNotePageState extends State<EditNotePage> {
       body: Padding(
         padding: const EdgeInsets.all(10),
         child: Form(
-          child: Column(
-            children: [
-              TextFormField(
-                onChanged: (val) {
-                  newData['title'] = val;
-                },
-                initialValue: editValue['title'],
-                textInputAction: TextInputAction.next,
-                decoration: const InputDecoration(
-                  border: InputBorder.none,
+          child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Column(
+              children: [
+                TextFormField(
+                  onChanged: (val) {
+                    newData['title'] = val;
+                  },
+                  initialValue: editValue['title'],
+                  textInputAction: TextInputAction.next,
+                  decoration: const InputDecoration(
+                    border: InputBorder.none,
+                  ),
                 ),
-              ),
-              TextFormField(
-                onChanged: (val) {
-                  newData['subtitle'] = val;
-                },
-                maxLines: null,
-                initialValue: editValue['subtitle'],
-                textInputAction: TextInputAction.done,
-                decoration: const InputDecoration(
-                  border: InputBorder.none,
+                TextFormField(
+                  onChanged: (val) {
+                    newData['subtitle'] = val;
+                  },
+                  maxLines: null,
+                  initialValue: editValue['subtitle'],
+                  textInputAction: TextInputAction.done,
+                  decoration: const InputDecoration(
+                    border: InputBorder.none,
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

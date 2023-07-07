@@ -279,76 +279,79 @@ class _AddNotePageState extends State<AddNotePage> {
         padding: const EdgeInsets.all(20),
         child: Form(
           key: notesKey,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    // Global.selDate,
-                    currentDate = "${date.day}/${date.month}/${date.year}",
-                    style: const TextStyle(
-                        color: Colors.black, fontWeight: FontWeight.bold),
+          child: SingleChildScrollView(
+            physics: const BouncingScrollPhysics(),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      // Global.selDate,
+                      currentDate = "${date.day}/${date.month}/${date.year}",
+                      style: const TextStyle(
+                          color: Colors.black, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      currentTime = "${date.hour}:${date.minute}",
+                      style: const TextStyle(
+                          color: Colors.black, fontWeight: FontWeight.bold),
+                    )
+                  ],
+                ),
+                TextFormField(
+                  controller: titleController,
+                  onSaved: (val) {
+                    title = val;
+                  },
+                  style: const TextStyle(
+                      color: Colors.black, fontWeight: FontWeight.bold),
+                  textInputAction: TextInputAction.next,
+                  cursorColor: Colors.white,
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    hintText: "Note Title",
+                    hintStyle:
+                        TextStyle(fontSize: 20, color: Colors.grey.shade600),
                   ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    currentTime = "${date.hour}:${date.minute}",
-                    style: const TextStyle(
-                        color: Colors.black, fontWeight: FontWeight.bold),
-                  )
-                ],
-              ),
-              TextFormField(
-                controller: titleController,
-                onSaved: (val) {
-                  title = val;
-                },
-                style: const TextStyle(
-                    color: Colors.black, fontWeight: FontWeight.bold),
-                textInputAction: TextInputAction.next,
-                cursorColor: Colors.white,
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  hintText: "Note Title",
-                  hintStyle:
-                      TextStyle(fontSize: 20, color: Colors.grey.shade600),
                 ),
-              ),
-              TextFormField(
-                controller: subTitleController,
-                validator: (val) {
-                  if (val!.isEmpty) {
-                    return "please enter notes";
-                  }
-                  return null;
-                },
-                onSaved: (val) {
-                  subtitle = val;
-                },
-                style: const TextStyle(
-                    color: Colors.black, fontWeight: FontWeight.bold),
-                cursorColor: Colors.white,
-                maxLines: null,
-                keyboardType: TextInputType.multiline,
-                textInputAction: TextInputAction.done,
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                  errorBorder: InputBorder.none,
-                  hintText: "Type something....",
-                  hintStyle: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.grey.shade600),
+                TextFormField(
+                  controller: subTitleController,
+                  validator: (val) {
+                    if (val!.isEmpty) {
+                      return "please enter notes";
+                    }
+                    return null;
+                  },
+                  onSaved: (val) {
+                    subtitle = val;
+                  },
+                  style: const TextStyle(
+                      color: Colors.black, fontWeight: FontWeight.bold),
+                  cursorColor: Colors.white,
+                  maxLines: null,
+                  keyboardType: TextInputType.multiline,
+                  textInputAction: TextInputAction.done,
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    errorBorder: InputBorder.none,
+                    hintText: "Type something....",
+                    hintStyle: TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.grey.shade600),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
